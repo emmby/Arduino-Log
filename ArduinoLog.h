@@ -200,6 +200,12 @@ public:
 #endif
   }
 
+  template <class T, typename... Args> void fatalln(){
+#ifndef DISABLE_LOGGING
+    printLevel(LOG_LEVEL_FATAL, true, "");
+#endif
+  }
+
 	/**
 	 * Output an error message. Output message contains
 	 * E: followed by original message
@@ -221,6 +227,12 @@ public:
     printLevel(LOG_LEVEL_ERROR, true, msg, args...);
 #endif
   } 
+
+   template <class T, typename... Args> void errorln(){
+#ifndef DISABLE_LOGGING
+    printLevel(LOG_LEVEL_ERROR, true, "");
+#endif
+  } 
 	/**
 	 * Output a warning message. Output message contains
 	 * W: followed by original message
@@ -240,6 +252,12 @@ public:
    template <class T, typename... Args> void warningln(T msg, Args...args){
 #ifndef DISABLE_LOGGING
     printLevel(LOG_LEVEL_WARNING, true, msg, args...);
+#endif
+  } 
+
+   template <class T, typename... Args> void warningln(){
+#ifndef DISABLE_LOGGING
+    printLevel(LOG_LEVEL_WARNING, true, "");
 #endif
   } 
 
@@ -265,6 +283,12 @@ public:
 #endif
   }  
 
+  template <class T, typename... Args> void noticeln(){
+#ifndef DISABLE_LOGGING
+    printLevel(LOG_LEVEL_NOTICE, true, "");
+#endif
+  }  
+
   template <class T, typename... Args> void info(T msg, Args...args) {
 #ifndef DISABLE_LOGGING
 	  printLevel(LOG_LEVEL_INFO, false, msg, args...);
@@ -277,6 +301,11 @@ public:
 #endif
   }
 
+  template <class T, typename... Args> void infoln() {
+#ifndef DISABLE_LOGGING
+	  printLevel(LOG_LEVEL_INFO, true, "");
+#endif
+  }
 	/**
 	 * Output a trace message. Output message contains
 	 * N: followed by original message
@@ -299,6 +328,12 @@ public:
 #endif
 	}
 
+  template <class T, typename... Args> void traceln(){
+#ifndef DISABLE_LOGGING
+    printLevel(LOG_LEVEL_TRACE, true, "");
+#endif
+	}
+
 	/**
 	 * Output a verbose message. Output message contains
 	 * V: followed by original message
@@ -318,6 +353,12 @@ public:
   template <class T, typename... Args> void verboseln(T msg, Args... args){
 #ifndef DISABLE_LOGGING
     printLevel(LOG_LEVEL_VERBOSE, true, msg, args...);
+#endif
+  }
+
+  template <class T, typename... Args> void verboseln(){
+#ifndef DISABLE_LOGGING
+    printLevel(LOG_LEVEL_VERBOSE, true, "");
 #endif
   }
 
