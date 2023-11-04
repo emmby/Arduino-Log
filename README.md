@@ -10,7 +10,7 @@ ArduinoLog is a minimalistic framework to help the programmer output log stateme
 
 ## Features
 
-* Different log levels (Error, Info, Warn, Debug, Verbose )
+* Different log levels (Error, Notice(Info), Warn, Trace(Debug), Verbose )
 * Supports multiple variables
 * Supports formatted strings 
 * Supports formatted strings from flash memory
@@ -58,7 +58,7 @@ See [Log-basic.ino](examples/Log-basic/Log-basic.ino) example
 ### Initialisation
 
 The log library needs to be initialized with the log level of messages to show and the log output. The latter will often be the Serial interface.
-Optionally, you can indicate whether to show the log type (error, debug, etc) for each line.
+Optionally, you can indicate whether to show the log type (error, trace, etc) for each line.
 
 ```
 begin(int level, Print* logOutput, bool showLevel)
